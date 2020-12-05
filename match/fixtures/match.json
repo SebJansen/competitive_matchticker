@@ -1,0 +1,91 @@
+[
+  {
+    "model": "match.matchoutcome",
+    "pk": 1,
+    "fields": {
+      "name": "Draw"
+    }
+  },
+  {
+    "model": "match.matchoutcome",
+    "pk": 2,
+    "fields": {
+      "name": "Victory"
+    }
+  },
+  {
+    "model": "match.matchoutcome",
+    "pk": 3,
+    "fields": {
+      "name": "Loss"
+    }
+  },
+  {
+    "model": "match.match",
+    "pk": 9,
+    "fields": {
+      "date": "2020-12-04T20:00:00Z",
+      "outcome": 2
+    }
+  },
+  {
+    "model": "match.player",
+    "pk": 1,
+    "fields": {
+      "name": "Seb"
+    }
+  },
+  {
+    "model": "match.player",
+    "pk": 2,
+    "fields": {
+      "name": "Paul"
+    }
+  },
+  {
+    "model": "match.player",
+    "pk": 3,
+    "fields": {
+      "name": "Mo"
+    }
+  },
+  {
+    "model": "match.player",
+    "pk": 4,
+    "fields": {
+      "name": "Fin"
+    }
+  },
+  {
+    "model": "match.matchplayer",
+    "pk": 33,
+    "fields": {
+      "match": 9,
+      "player": 1
+    }
+  },
+  {
+    "model": "match.matchplayer",
+    "pk": 34,
+    "fields": {
+      "match": 9,
+      "player": 2
+    }
+  },
+  {
+    "model": "match.matchplayer",
+    "pk": 35,
+    "fields": {
+      "match": 9,
+      "player": 3
+    }
+  },
+  {
+    "model": "match.matchplayer",
+    "pk": 36,
+    "fields": {
+      "match": 9,
+      "player": 4
+    }
+  }
+]

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ object.outcome }}</title>
+</head>
+<body>
+
+<h1>{{ object.outcome }}</h1>
+<p>{{ object.date }}</p>
+
+{% if object.matchplayer_set.all %}
+    <ul>
+        {% for player in object.matchplayer_set.all %}
+            <li>{{ player }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No players found</p>
+{% endif %}
+
+<a href="{% url 'match:list' %}">Go back to overview</a>
+
+</body>
+</html>

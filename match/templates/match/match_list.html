@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Office Competitive Scene</title>
+</head>
+<body>
+
+<h1>Office Competitive Scene</h1>
+
+{% for match in object_list %}
+    <a href="{{ match.get_absolute_url }}">{{ match.date|date:"r" }}</a>
+{% empty %}
+    <p>No matches found</p>
+{% endfor %}
+
+</body>
+</html>

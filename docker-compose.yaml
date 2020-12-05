@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:13.1
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    ports:
+      - 5432:5432
+
+  migration:
+    build: .
+    command: python manage.py migrate
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+
+  loaddata:
+    build: .
+    command: python manage.py loaddata users.json
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+
+  web:
+    build: .
+    restart: always
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+      - migration
+      - loaddata
